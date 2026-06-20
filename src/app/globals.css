@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --f1-red: #e10600;
+  --f1-dark: #111111;
+  --f1-card: #1a1a1a;
+  --f1-border: #2a2a2a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: #0a0a0a;
+  color: #f0f0f0;
+  font-family: var(--font-geist-sans, Arial, sans-serif);
+  overflow-x: hidden;
+}
+
+html { scroll-behavior: smooth; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: var(--f1-red); border-radius: 3px; }
+
+/* Speed line animation */
+@keyframes speedline {
+  from { transform: translateX(-100vw); }
+  to   { transform: translateX(100vw); }
+}
+.speed-line {
+  position: absolute;
+  height: 1px;
+  width: 200px;
+  background: linear-gradient(90deg, transparent, #e10600, transparent);
+  animation: speedline 2s linear infinite;
+  pointer-events: none;
+}
+
+/* Glow pulse */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px currentColor; }
+  50%       { box-shadow: 0 0 24px currentColor; }
+}
+
+/* Slide in */
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slide-in { animation: slideInUp 0.4s ease forwards; }
+
+/* Live badge blink */
+@keyframes liveblink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.live-badge { animation: liveblink 1.2s ease-in-out infinite; }
