@@ -1,0 +1,12 @@
+@import "tailwindcss";
+:root { --f1-red:#e10600; }
+* { box-sizing:border-box; }
+body { background:#0a0a0a; color:#f0f0f0; font-family:Arial,sans-serif; overflow-x:hidden; }
+html { scroll-behavior:smooth; }
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:#111; }
+::-webkit-scrollbar-thumb { background:#e10600; border-radius:3px; }
+@keyframes speedline { from{transform:translateX(-100vw)} to{transform:translateX(100vw)} }
+.speed-line { position:absolute; height:1px; width:200px; background:linear-gradient(90deg,transparent,#e10600,transparent); animation:speedline 2s linear infinite; pointer-events:none; }
+@keyframes liveblink { 0%,100%{opacity:1} 50%{opacity:.4} }
+.live-badge { animation:liveblink 1.2s ease-in-out infinite; }
